@@ -1,0 +1,50 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.product-searchform{
+    border-radius: 5px;
+    align-self: flex-start;
+
+    form{
+        @include media-breakpoint-down(sm) {
+            left: 0;
+            z-index: 10;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            transform: translateX(-100%);
+            transition: .5s all;
+            display: none;
+            &.active{
+                display: block;
+                &.animate{
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+    
+}
+
+.fade{
+
+    $transition-time: .5s;
+    @mixin setup-in{opacity: 1;}
+    @mixin setup-out{opacity: 0;}
+    
+    &-appear, &-enter{
+        @include setup-out;z-index: 1;
+        &-active, &#{&}-active{@include setup-in;transition: $transition-time all;}
+    }
+    &-exit {
+        @include setup-in;
+        position: absolute;
+        left: 0;right: 0;top: 0;
+        &#{&}-active{
+            @include setup-out;
+            transition: $transition-time all;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.Banner{
+    position: relative;
+
+    .slick-slide {
+        &.slick-current, &.slick-active{
+            z-index: 1;
+        }
+        .slide{
+            position: relative;
+            
+            .slide__wrapper{
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                max-width: 35%;
+                display: flex;
+                clip-path: polygon(100% 0, 0 0, 0 100%, calc(75% + 100px) 100%);
+
+                @include media-breakpoint-down(sm) {
+                    &{
+                        clip-path:none;
+                        max-width: initial;
+                        height: auto;
+                        bottom: 0;
+                    }                    
+                } 
+                
+                .slide__container{
+                    background: #fff;
+                    width: 100%;
+                    padding: 3rem;
+                    @include media-breakpoint-down(sm) {padding: 1rem 15px;}
+
+                    a:hover{text-decoration: none;}
+                    .title{font-size: 4rem;color: #222;margin-bottom: 1rem;line-height: 1em;}
+                    .subtitle{font-size: 2rem;color: #222;margin-bottom: 1em;line-height: 1.2em;}
+                    .button{
+                        font-size: 1.5rem;background: #222;border-color: #222;font-weight: 500;padding: .5rem 1.4rem;transition: .3s all;
+                        &:hover{background: #fff;color: #222;}
+                    }
+                    @include media-breakpoint-down(lg) {
+                        .title{font-size: 2.5rem;margin-bottom: 0.7rem;}
+                        .subtitle{font-size: 1.3rem;margin-bottom: 0.7rem;}
+                        .button{font-size: 1.1rem;}
+                    }
+                    @include media-breakpoint-down(md) {
+                        .title{font-size: 1.8rem;margin-bottom: 0.3rem;}
+                        .subtitle{font-size: 1.1rem;margin-bottom: 0.5rem;}
+                        .button{font-size: 1rem;}
+                    }
+                   
+                }
+            }
+
+            img{
+                width: 100%;
+                height: 40vw;
+                object-fit: cover;
+                object-position: center;
+                transition: .3s all;
+                &:hover{filter: contrast(1.1) saturate(1.1);}
+                @include media-breakpoint-down(sm) {
+                    &{height: 78vh;}
+                }
+            }
+        }
+         
+    }
+
+    .slick-arrow{
+        display: none!important;
+    }
+
+    .slick-dots{
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        display: flex!important;
+        padding: 0;
+        
+        @include media-breakpoint-down(sm) {
+            &{display: none!important;}                    
+        } 
+
+        li{
+            margin: 0 4px;
+
+            div{
+                width: 50px;
+                height: 20px;
+                border: 3px solid #fff;
+                background: transparent;
+                cursor: pointer;
+                transition: .3s all;
+            }
+            &:hover, &.slick-active{
+                div{ background: #fff;}
+            }
+        }
+    }
+}
+
+.trending-products{
+    box-shadow: inset 0px 11px 8px -10px #999, inset 0px -11px 8px -10px #999;
+    background: linear-gradient(112.5deg, rgba(232, 232, 232, 0.03) 0%, rgba(232, 232, 232, 0.03) 2%,rgba(231, 231, 231, 0.03) 2%, rgba(231, 231, 231, 0.03) 4%,rgba(231, 231, 231, 0.03) 4%, rgba(231, 231, 231, 0.03) 11%,rgba(2, 2, 2, 0.03) 11%, rgba(2, 2, 2, 0.03) 67%,rgba(231, 231, 231, 0.03) 67%, rgba(231, 231, 231, 0.03) 90%,rgba(111, 111, 111, 0.03) 90%, rgba(111, 111, 111, 0.03) 100%),linear-gradient(157.5deg, rgba(210, 210, 210, 0.03) 0%, rgba(210, 210, 210, 0.03) 17%,rgba(254, 254, 254, 0.03) 17%, rgba(254, 254, 254, 0.03) 18%,rgba(96, 96, 96, 0.03) 18%, rgba(96, 96, 96, 0.03) 44%,rgba(159, 159, 159, 0.03) 44%, rgba(159, 159, 159, 0.03) 70%,rgba(24, 24, 24, 0.03) 70%, rgba(24, 24, 24, 0.03) 82%,rgba(16, 16, 16, 0.03) 82%, rgba(16, 16, 16, 0.03) 100%),linear-gradient(22.5deg, rgba(47, 47, 47, 0.03) 0%, rgba(47, 47, 47, 0.03) 32%,rgba(124, 124, 124, 0.03) 32%, rgba(124, 124, 124, 0.03) 40%,rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 42%,rgba(16, 16, 16, 0.03) 42%, rgba(16, 16, 16, 0.03) 64%,rgba(243, 243, 243, 0.03) 64%, rgba(243, 243, 243, 0.03) 94%,rgba(93, 93, 93, 0.03) 94%, rgba(93, 93, 93, 0.03) 100%),linear-gradient(90deg, #FFF,#FFF);
+
+    &__list{
+        mask-image: linear-gradient(black 0%, black 80%, transparent 100%);
+        padding: 5px;
+    }
+
+    .button{
+        font-size: 1.3rem;font-weight: 500;
+    }
+}
+.about-company{
+    p{
+        font-size: 1.6rem;font-style: italic;
+        @include media-breakpoint-down(lg) {
+            &{font-size: 1.4rem;}                    
+        }
+        @include media-breakpoint-down(md) {
+            &{font-size: 1.2rem;}                    
+        }
+        @include media-breakpoint-down(sm) {
+            &{font-size: 1.1rem;}                    
+        }
+        
+    }
+}

@@ -1,0 +1,26 @@
+.Searchbar{
+    &__button{
+        &__container{
+            label{
+                cursor: pointer;
+                transition: .3s all;
+                img{height: 21px;transition: .3s all;}
+                &:hover{
+                    img{filter: invert(100%);}
+                }
+            }
+        }
+    }
+    &__results{
+        ul {
+            li {
+                a{
+                    transition: .15s all;
+                    color: #222;
+                    &:hover, &:focus{background: var(--dark);color: #fff;}
+                }
+                &:not(:last-child){border-bottom: 1px solid #ced4da;}
+            }
+        }
+    }
+}

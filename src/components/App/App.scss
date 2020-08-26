@@ -1,0 +1,74 @@
+html{
+  font-size: 14px;
+}
+
+.main-width{
+  width: 1300px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#App-content{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+$light-blue: rgb(42, 134, 255);
+$light-dark: #222;
+
+$btn-font-weight: 300;
+$text-color: $light-dark;
+$link-color: $light-blue;
+
+$input-btn-focus-box-shadow: 0 0 3px #999;
+$input-focus-border-color: none;
+$input-box-shadow-color: #999;
+$input-focus-box-shadow-color: #999;
+
+$box-shadow-sm: 0 0 1px #222;
+$box-shadow: 0 0 2px #222;
+$box-shadow-lg: 0 0 3px #222;
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus,a:focus {
+    outline: none;
+}
+
+.main-content, header, footer{position: relative;}
+header, footer{z-index: 2;}
+
+.fade_blur{
+    $transition: .5s all linear;
+    @mixin setup-in{opacity: 1;filter: blur(0px);}
+    @mixin setup-out{opacity: 0;filter: blur(40px);}
+    
+    &-appear, &-enter{
+        @include setup-out;z-index: 1;
+        &-active, &#{&}-active{@include setup-in;transition: $transition;}
+    }
+    &-exit {
+        @include setup-in;
+        position: absolute;
+        left: 0;right: 0;top: 0;
+
+        &#{&}-active{
+            @include setup-out;
+            filter: blur(0px);
+            transition: $transition;
+        }
+    }
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
+

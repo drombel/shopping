@@ -1,0 +1,74 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.productList{
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: repeat(3, 1fr)!important;
+        }
+        @include media-breakpoint-down(md) {
+            grid-template-columns: repeat(2, 1fr)!important;
+        }
+        @include media-breakpoint-down(xs) {
+            grid-template-columns: repeat(1, 1fr)!important;
+        }
+    }
+
+    &__item{
+        border: 1px solid #999;
+        transition: .3s all;
+        &:hover{
+            img{filter: contrast(1.15) saturate(1.15);}
+            & > a{
+                &:after{
+                    box-shadow: 0 0 10px #222 inset;
+                }
+            }
+        }
+        & > a{
+            position: relative;
+            display: block;
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;left: 0;
+                height: 100%;width: 100%;
+                box-shadow: 0 0 5px #222 inset;
+                transition: .3s all;
+            }
+        }
+        img{
+            height: 20rem;width: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: .3s all;
+            @include media-breakpoint-down(sm) {
+                &{height: 15rem;}                    
+            }
+        }
+
+        &__desc{
+            .price{
+                border-left: 2px solid #666;font-weight: 700;font-size: 1.2rem;
+                @include media-breakpoint-down(xs) {
+                    &{border-top: 2px solid #666;border-left: none;}                    
+                }
+            }
+            .button{
+                background: #666;color: #fff;
+                border: none;
+                font-size: 1.3rem;font-weight: 500;
+                padding: .5rem 1rem;width: 100%;
+                transition: .3s all;
+                &:hover{
+                    background: #333;
+                }
+            }
+        }
+    }
+}
