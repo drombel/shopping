@@ -1,6 +1,6 @@
 {
   "name": "shop-react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -25,7 +25,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean": "rmdir /s /q node_modules",
-    "reinstall": "npm run clean && npm install"
+    "reinstall": "npm run clean && npm install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,5 +48,5 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.3"
   },
-  "homepage": "."
+  "homepage": "https://github.com/drombel/shopping"
 }
