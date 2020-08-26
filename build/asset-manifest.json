@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/drombel/shopping/static/css/main.bd60f3c5.chunk.css",
+    "main.js": "/drombel/shopping/static/js/main.b7f17e48.chunk.js",
+    "main.js.map": "/drombel/shopping/static/js/main.b7f17e48.chunk.js.map",
+    "runtime-main.js": "/drombel/shopping/static/js/runtime-main.e8f416ed.js",
+    "runtime-main.js.map": "/drombel/shopping/static/js/runtime-main.e8f416ed.js.map",
+    "static/css/2.e4a705bb.chunk.css": "/drombel/shopping/static/css/2.e4a705bb.chunk.css",
+    "static/js/2.7b7fb9b9.chunk.js": "/drombel/shopping/static/js/2.7b7fb9b9.chunk.js",
+    "static/js/2.7b7fb9b9.chunk.js.map": "/drombel/shopping/static/js/2.7b7fb9b9.chunk.js.map",
+    "index.html": "/drombel/shopping/index.html",
+    "precache-manifest.5d1ef31f4b6d5cf4eb6bd05529ff4873.js": "/drombel/shopping/precache-manifest.5d1ef31f4b6d5cf4eb6bd05529ff4873.js",
+    "service-worker.js": "/drombel/shopping/service-worker.js",
+    "static/css/2.e4a705bb.chunk.css.map": "/drombel/shopping/static/css/2.e4a705bb.chunk.css.map",
+    "static/css/main.bd60f3c5.chunk.css.map": "/drombel/shopping/static/css/main.bd60f3c5.chunk.css.map",
+    "static/js/2.7b7fb9b9.chunk.js.LICENSE.txt": "/drombel/shopping/static/js/2.7b7fb9b9.chunk.js.LICENSE.txt",
+    "static/media/about-company.jpg": "/drombel/shopping/static/media/about-company.ca9aeb6c.jpg",
+    "static/media/contact.jpg": "/drombel/shopping/static/media/contact.ce01c1dd.jpg",
+    "static/media/jacket-1.jpg": "/drombel/shopping/static/media/jacket-1.d9f53a39.jpg",
+    "static/media/jacket-2.jpg": "/drombel/shopping/static/media/jacket-2.413bff20.jpg",
+    "static/media/logo.png": "/drombel/shopping/static/media/logo.e4f80f5e.png",
+    "static/media/mountains.jpg": "/drombel/shopping/static/media/mountains.8f3835a0.jpg",
+    "static/media/pants-1.jpg": "/drombel/shopping/static/media/pants-1.e1a3163c.jpg",
+    "static/media/pants-2.jpg": "/drombel/shopping/static/media/pants-2.084fa3bd.jpg",
+    "static/media/search.svg": "/drombel/shopping/static/media/search.5d65b94e.svg",
+    "static/media/shirt-1.jpg": "/drombel/shopping/static/media/shirt-1.b0e48449.jpg",
+    "static/media/shirt-2.jpg": "/drombel/shopping/static/media/shirt-2.58ac5ebf.jpg",
+    "static/media/shoes-1.jpg": "/drombel/shopping/static/media/shoes-1.ef644997.jpg",
+    "static/media/shoes-2.jpg": "/drombel/shopping/static/media/shoes-2.5d868a3c.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8f416ed.js",
+    "static/css/2.e4a705bb.chunk.css",
+    "static/js/2.7b7fb9b9.chunk.js",
+    "static/css/main.bd60f3c5.chunk.css",
+    "static/js/main.b7f17e48.chunk.js"
+  ]
+}
