@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ProductList from './../Products/ProductList';
 import { dataProducts, categories } from './../Products/data';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import './ProductsPage.scss';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import uuid from 'uuid';
@@ -41,6 +41,7 @@ function Page() {
     const isInitialMount = useRef(true); // to avoid empty products case
     const animationKey = useRef(uuid.v4()); // to make animations stable
     const form = useRef(null); // for mobile filter menu activation
+    const history = useHistory();
 
     function getProducts(){
         clearTimeout(searchTimeout);
@@ -107,7 +108,15 @@ function Page() {
         const newOrder = orderBy.find(item => item.id === id, id); 
         setOrder(newOrder ?? orderBy[0]);
     };
-    const onSubmitSearch = e => getProducts();
+    const onSubmitSearch = e => {
+        e.preventDefault();
+        getProducts();
+        const query = new URLSearchParams(new FormData(e.target)).toString();
+        history.push({ pathname: '/products', search: `?${query}` });
+        form.current.classList.remove('animate');
+        form.current.classList.remove('active');
+        return false;
+    };
     const toggleForm = e => {
         e.preventDefault();
         
@@ -118,7 +127,7 @@ function Page() {
             const isVisible = form.current.classList.contains('animate');
             if(isVisible){
                 form.current.classList.remove('animate');
-                return setTimeout(() => resolve(isVisible), 500);;
+                return setTimeout(() => resolve(isVisible), 500);
             }
                 
             form.current.classList.add('active');

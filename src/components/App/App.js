@@ -8,7 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast, Slide } from 'react-toastify';
 import './App.scss';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import uuid from 'uuid';
 
 toast.configure({
     position: toast.POSITION.BOTTOM_RIGHT,
@@ -31,7 +30,7 @@ function App() {
                         return (
                             <TransitionGroup>
                                 {/* location.key */}
-                                <CSSTransition key={uuid.v4()} classNames="fade_blur" timeout={500}>
+                                <CSSTransition key={location.pathname} classNames="fade_blur" timeout={500}>
                                     <Switch location={location}>
                                         {Routes.map((route, index) => {
                                         return(
