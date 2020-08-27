@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast, Slide } from 'react-toastify';
 import './App.scss';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import uuid from 'uuid';
 
 toast.configure({
     position: toast.POSITION.BOTTOM_RIGHT,
