@@ -49,5 +49,6 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.3"
   },
-  "homepage": "https://drombel.github.io/shopping/"
+  "homepage": "https://drombel.github.io/shopping/",
+  "baseURL": "/shopping"
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Switch, Route } from "react-router-dom";
 import Header from './../Header';
 import Footer from './../Footer';
 import { Routes } from './../Routes';
@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast, Slide } from 'react-toastify';
 import './App.scss';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import uuid from 'uuid';
 
 toast.configure({
     position: toast.POSITION.BOTTOM_RIGHT,
@@ -21,22 +22,25 @@ toast.configure({
 function App() {
     return (
         <div id='App-content'>
-            <Router>
+            {/* should have been BrowserRouter, but github doesn't allow subpages like on localhost */}
+            <HashRouter>
                 <Header />
                 <main className='main-content flex flex-fill'>
                     <Route render={({ location }) => {
                         window.scrollTo(0, 0);
                         return (
                             <TransitionGroup>
-                                <CSSTransition key={location.key} classNames="fade_blur" timeout={500}>
+                                {/* location.key */}
+                                <CSSTransition key={uuid.v4()} classNames="fade_blur" timeout={500}>
                                     <Switch location={location}>
-                                        {Routes.map((route, index) => (
+                                        {Routes.map((route, index) => {
+                                        return(
                                             <Route
                                                 key={index}
                                                 {...route.settings}
                                                 component={route.page}
                                             />
-                                        ))}
+                                        )})}
                                         <Route component={NotFoundPage} />
                                     </Switch>
                                 </CSSTransition>
@@ -45,7 +49,7 @@ function App() {
                     }} />
                 </main>
                 <Footer />
-            </Router>
+            </HashRouter>
         </div>
     );
 }

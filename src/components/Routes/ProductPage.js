@@ -16,7 +16,6 @@ function Page({ match: { url } }) {
 
     if (product === undefined) return (<NotFoundPage />);
 
-    // dodać filter i searchbar jakoś + kategorie
     return (
         <section className='py-5 bg-white'>
             <div className="container">
